@@ -3,6 +3,6 @@
 
     $fibonacci = new FibonacciCalculator();
 
-    $number = 30;
+    $number = -1;
 
     echo $fibonacci->getNumber($number);
