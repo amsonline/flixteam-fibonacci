@@ -1,0 +1,15 @@
+{
+    "name": "ahmad/fibonacci",
+    "description": "This is a test to calculate Fibonacci value of the given number",
+    "type": "project",
+    "require-dev": {
+        "phpunit/phpunit": "^9.5"
+    },
+    "authors": [
+        {
+            "name": "Ahmad Sadeghi",
+            "email": "allaboutams@gmail.com"
+        }
+    ],
+    "require": {}
+}

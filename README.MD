@@ -28,3 +28,8 @@ should mention that if we had to handle decimal values as well, I **had to** use
 *The other implemented methods are still available (but not used) on Fibonacci.class.php as **getNumberByFormula** and **getNumberByRecursive**.*
 
 So, I made some changes to my method to handle negative inputs as well.
+
+Now I wanted to write Unit tests, so I initialized composer inside the project and added tests. I provided all happy paths into a single
+data provider and put the unhappy paths into separated methods (inputs which result in INF).
+
+I also added an infinity check to throw Exception on infinite result.

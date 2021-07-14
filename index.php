@@ -1,8 +1,8 @@
 <?php
-    require_once "Fibonacci.class.php";
+    require_once "vendor/autoload.php";
 
     $fibonacci = new FibonacciCalculator();
 
-    $number = -1;
+    $number = 100;
 
     echo $fibonacci->getNumber($number);

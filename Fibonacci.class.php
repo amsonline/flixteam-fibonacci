@@ -7,7 +7,7 @@ class FibonacciCalculator implements Fibonacci {
         return floatval(pow((1 + $sqrtMultiplier), $n) - pow((1 - $sqrtMultiplier), $n)) / floatval(pow(2, $n) * $sqrtMultiplier);
     }
 
-    public function getNumber(int $n)
+    public function getNumber(int $n) : float
     {
         $finalMultiplier = 1;
         if ($n < 0) {
@@ -39,7 +39,13 @@ class FibonacciCalculator implements Fibonacci {
             $ultimateNumber = $currentNumber;
         }
 
-        return $currentNumber * $finalMultiplier;
+        $result = $currentNumber * $finalMultiplier;
+
+        if (is_infinite($result)) {
+            throw new Exception("Value out of range", 400);
+        }
+
+        return $result;
     }
 
     public function getNumberByRecursive(int $n)
