@@ -4,11 +4,6 @@ namespace AMSOnline;
 use AMSOnline\Exceptions\OutOfRangeException;
 
 class FibonacciCalculator implements Fibonacci {
-    public function getNumberByFormula(int $n) {
-        $sqrtMultiplier = sqrt(5);
-        return floatval(pow((1 + $sqrtMultiplier), $n) - pow((1 - $sqrtMultiplier), $n)) / floatval(pow(2, $n) * $sqrtMultiplier);
-    }
-
     public function getNumber(int $n) : float
     {
         $finalMultiplier = 1;
@@ -48,18 +43,5 @@ class FibonacciCalculator implements Fibonacci {
         }
 
         return $result;
-    }
-
-    public function getNumberByRecursive(int $n)
-    {
-        if ($n == 0) {
-            return 0;
-        }
-
-        if ($n == 1) {
-            return 1;
-        }
-
-        return $this->getNumberByRecursive($n - 1) + $this->getNumberByRecursive($n - 2);
     }
 }

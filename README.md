@@ -1,4 +1,5 @@
 # Fibonacci calculator
+This readme contains all my thoughts while implementing this API.
 
 ## Getting started
 After creating the interface, I started to think how can I implement the method to get best result.
@@ -38,3 +39,24 @@ I also added an infinity check to throw OutOfRangeException on infinite result.
 ## Refactor and cleanup
 
 After verifying that everything works, I started to clean up the working directory.
+
+## Rest API
+To get the REST API, I used **Slim Micro-Framework**. The endpoint is created at
+
+`POST /fibonacci`
+
+The number should be passed to the endpoint by the structure below:
+
+`
+{
+   "number": [The number]
+}
+`
+
+which results to the N-th Fibonacci number, and if the value is out of range, it will show the error _"Value out of range"_ with **HTTP Status Code 400**.
+
+I put my fibonacci calculator object inside a container and loaded through PHP-DI. I also performed some validations before passing the input to the method.
+This can be moved to a model later. I used a single associative array to prepare the output. Whether the process throws an exception or not,
+the responseData array and the statusCode variable will get their specific values. At last, the code returns the JSON encoded result to output.
+
+If an invalid value is passed to the endpoint (e.g. a string), it will show the error _"Invalid input"_ with **HTTP Status Code 400**.
