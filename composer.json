@@ -11,5 +11,12 @@
             "email": "allaboutams@gmail.com"
         }
     ],
-    "require": {}
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "AMSOnline\\": "src",
+            "AMSOnline\\Tests\\": "tests"
+        }
+    },
+    "minimum-stability": "stable"
 }

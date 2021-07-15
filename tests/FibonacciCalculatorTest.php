@@ -1,7 +1,9 @@
 <?php
 
+namespace AMSOnline\Tests;
 
 use PHPUnit\Framework\TestCase;
+use AMSOnline\FibonacciCalculator;
 
 final class FibonacciCalculatorTest extends TestCase
 {
@@ -19,7 +21,7 @@ final class FibonacciCalculatorTest extends TestCase
 
     public function testGetNumberOutOfRangePositive()
     {
-        $this->expectExceptionCode(400);
+        $this->expectException(AMSOnline\Exceptions\OutOfRangeException::class);
         $this->calculator->getNumber(50000);
     }
 

@@ -1,5 +1,7 @@
 <?php
-require_once "Fibonacci.php";
+namespace AMSOnline;
+
+use AMSOnline\Exceptions\OutOfRangeException;
 
 class FibonacciCalculator implements Fibonacci {
     public function getNumberByFormula(int $n) {
@@ -42,7 +44,7 @@ class FibonacciCalculator implements Fibonacci {
         $result = $currentNumber * $finalMultiplier;
 
         if (is_infinite($result)) {
-            throw new Exception("Value out of range", 400);
+            throw new OutOfRangeException("Value out of range", 400);
         }
 
         return $result;

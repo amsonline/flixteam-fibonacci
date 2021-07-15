@@ -1,5 +1,6 @@
 <?php
 
+namespace AMSOnline;
 
 interface Fibonacci
 {
